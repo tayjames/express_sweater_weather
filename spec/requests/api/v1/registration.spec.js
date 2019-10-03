@@ -1,5 +1,5 @@
 var shell = require('shelljs');
-var request = require("supertest");
+var request = require('supertest');
 var app = require('../../../../app');
 
 describe('api', () => {
