@@ -10,6 +10,6 @@ Sweater Weather Express is a project that allows users to register, login, and r
 
 # Setup
 ### Requirements
-Node 10.16.3
-dotenv: using this package will ensure the security of sesitive environment variables
-bcrypt: using this package will allow for password management
+1. Node 10.16.3
+1. dotenv: using this package will ensure the security of sesitive environment variables
+1. bcrypt: using this package will allow for password management
