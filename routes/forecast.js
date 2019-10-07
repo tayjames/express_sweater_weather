@@ -12,13 +12,11 @@ router.get('/', function(req, res, next) {
       where: {
         apiKey: req.body.apiKey
       }
-
     })
     .then(user => {
       console.log(user)
       if (user) {
         let google_url = "https://maps.googleapis.com/maps/api/geocode/json?address="+req.query.location+"&key="+process.env.GOOGLE_GEOCODE_API_KEY
-        // console.log(google_url)
         fetch(google_url)
         .then(response => response.text())
         // console.log(response)
@@ -30,7 +28,7 @@ router.get('/', function(req, res, next) {
           .then(result => {
             res.setHeader("Content-type", "application/json");
             res.status(201).send(JSON.parse(result));
-            console.log(result)
+            // console.log(result)
           })
         })
         .catch(error => {

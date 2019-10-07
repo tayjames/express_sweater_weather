@@ -6,16 +6,16 @@ var User = require('../../../../models').User;
 const bcrypt = require('bcrypt');
 
 describe('api', () => {
-  beforeAll(() => {
-    shell.exec('npx sequelize db:create')
-  });
-  beforeEach(() => {
-    shell.exec('npx sequelize db:migrate')
-    shell.exec('npx sequelize db:seed:all')
-  });
-  afterEach(() => {
-    shell.exec('npx sequelize db:migrate:undo:all')
-  });
+  // beforeAll(() => {
+  //   shell.exec('npx sequelize db:create')
+  // });
+  // beforeEach(() => {
+  //   shell.exec('npx sequelize db:migrate')
+  //   shell.exec('npx sequelize db:seed:all')
+  // });
+  // afterEach(() => {
+  //   shell.exec('npx sequelize db:migrate:undo:all')
+  // });
 
   describe('Test POST route to /api/v1/sessions path', () => {
     test('Returns a 200 status with an apiKey', () => {

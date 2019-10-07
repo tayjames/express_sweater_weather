@@ -3,16 +3,16 @@ var request = require('supertest');
 var app = require('../../../../app');
 
 describe('api', () => {
-  beforeAll(() => {
-    shell.exec('npx sequelize db:create')
-  });
-  beforeEach(() => {
-    shell.exec('npx sequelize db:migrate')
-    shell.exec('npx sequelize db:seed:all')
-  });
-  afterEach(() => {
-    shell.exec('npx sequelize db:migrate:undo:all')
-  });
+  // beforeAll(() => {
+  //   shell.exec('npx sequelize db:create')
+  // });
+  // beforeEach(() => {
+  //   shell.exec('npx sequelize db:migrate')
+  //   shell.exec('npx sequelize db:seed:all')
+  // });
+  // afterEach(() => {
+  //   shell.exec('npx sequelize db:migrate:undo:all')
+  // });
 
   describe("Test POST route to /api/v1/users path", () => {
     test('returns a 201 status with an api key associated with user', () => {
@@ -25,7 +25,8 @@ describe('api', () => {
       return request(app).post("/api/v1/users").send(params)
         .then(response => {
           expect(response.status).toBe(201),
-          expect(response.body).toHaveProperty("apiKey")
+          expect(response.body).toHaveProperty("apiKey"),
+          // expect(uuid.is(res.body.apiKey)).toBe(true)
           expect(response.body["apiKey"].length).toBeGreaterThan(0);
         });
     });
